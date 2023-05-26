@@ -38,7 +38,7 @@ export default function SignUp() {
     return (
         <div className="form">
             <form>
-                <h2>Sign Up</h2>
+                <h2>Sign-Up</h2>
                 <label>Enter your name: <br />
                     <input 
                         onChange={handleChange}

@@ -38,7 +38,7 @@ export default function Login() {
     return (
         <div className="form">
             <form >
-                <h2>Login</h2> <br />
+                <h2>Log-in</h2> <br />
                 <label>UserId <br />
                 <input 
                     type="text"

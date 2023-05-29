@@ -1,11 +1,13 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { createUserWithEmailAndPassword } from "firebase/auth"
-import { auth } from "./config/firebase";
+import { auth }  from "./config/firebase";
 import ArrowCircleLeftIcon from '@mui/icons-material/ArrowCircleLeft';
+import {getDatabase, ref, set } from "firebase/database";
 
 export default function SignUp() {
     let navigate = useNavigate();
+    const db = getDatabase();
     const [user, setUser] = useState({
         uname: "",
         email: "",
@@ -15,7 +17,6 @@ export default function SignUp() {
 
     function handleChange(event) {
         const { name, value } = event.target;
-
         setUser(preValue => {
             return {
               ...preValue,
@@ -28,11 +29,16 @@ export default function SignUp() {
         try {
             event.preventDefault();
             const registeredUser = await createUserWithEmailAndPassword(auth, user.email, user.password);
-            console.log(registeredUser.user);
+            set(ref(db, "users/" + registeredUser.user.uid), {
+                uname: user.uname,
+                email: user.email,
+                phone: user.phone
+            });
             navigate("/main", { state: { userName: user.uname} });
         }catch (error) {
             console.log(error.message);
         }
+        
     }
 
     return (

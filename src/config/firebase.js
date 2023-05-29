@@ -1,9 +1,10 @@
 import { initializeApp } from "firebase/app";
-import { getAuth } from "firebase/auth"
+import { getAuth } from "firebase/auth";
 
 const firebaseConfig = {
   apiKey: "AIzaSyBTfNLMTitJoMWlPKAYNrxK4uH-YgH-aWY",
   authDomain: "myapp-d15ea.firebaseapp.com",
+  databaseURL: "https://myapp-d15ea-default-rtdb.firebaseio.com",
   projectId: "myapp-d15ea",
   storageBucket: "myapp-d15ea.appspot.com",
   messagingSenderId: "130737031515",

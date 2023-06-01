@@ -41,7 +41,7 @@ export default function Login() {
                 <h2>Log-in</h2> <br />
                 <label>UserId <br />
                 <input 
-                    type="text"
+                    type="email"
                     name="email"
                     value={userDetails.email} 
                     onChange={handleChange}
@@ -58,7 +58,12 @@ export default function Login() {
                 <input className = "button" 
                     type="submit" 
                     onClick = {handleSubmit} 
-                />
+                /><br />
+                <label className="checkBox">
+                    <input type = "checkbox" />
+                    <span>Remember Me</span>
+                </label><br />
+               
                 <ArrowCircleLeftIcon className = "icon" onClick = {() => navigate("/")}/>
             </form>
         </div>

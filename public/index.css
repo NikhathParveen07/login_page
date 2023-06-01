@@ -1,7 +1,8 @@
 body {
     background-color: rgba(239, 239, 17, 0.804);
+    margin: 0;
+    padding: 0;
 }
-
 h2 {
     text-align: center;
 }
@@ -44,9 +45,12 @@ input {
     text-align: center;
     margin-top: 10%;
 }
-
-label {
-    font-weight: bolder;
-    font-family: 'Times New Roman', Times, serif;
+input[type="checkbox"] {
+    width: 15px;
+    accent-color: black;
 }
-
+.checkBox {
+    display: inline-flex;
+    border: 2px red solid;
+    height: auto;
+}
